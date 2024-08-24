@@ -7,7 +7,7 @@ const NotesForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if(!title=='' || description==''){
+    if(title=='' || description==''){
       alert('Please fill in all fields')
     }else{
     const {error} = await supabase
@@ -28,13 +28,13 @@ const NotesForm = () => {
   }}
     return (
    
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-20">
           
             <div className="w-full md:w-3/4 lg:w-1/2">
             <form action="" onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    className="w-full dark:bg-base-100 p-4 mb-4 text-lg border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full  dark:bg-base-100 p-4 mb-4 text-lg border border-gray-300 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
@@ -45,7 +45,7 @@ const NotesForm = () => {
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                 />
-                 <button className="btn dark:bg-base-100 mt-2 mb-6 border-gray-300   btn-outline w-full">Create Note</button>
+                 <button className="btn dark:bg-base-100 ml-4 sm:w-44 mt-2 mb-6 border-gray-300  w-full btn-outline ">Create Note</button>
                  </form>
             </div>
            

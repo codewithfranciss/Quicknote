@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
         <div className=" navbar  shadow-lg bg-base-100">
             <div className="flex-1">
-                <a className="btn btn-ghost text-2xl font-bold">QuickNotes</a>
+                <Link to='/'><a className="btn btn-ghost text-2xl font-bold">QuickNotes</a></Link>
             </div>
             
             <div className="mr-10 text-3xl font-extr">
