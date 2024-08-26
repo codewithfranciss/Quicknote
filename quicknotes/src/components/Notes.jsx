@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
 import { supabase } from '../../lib/supabaseClient';
+import { Link } from 'react-router-dom';
 
 const Notes = () => {
   const [notes, setNotes] = useState([]);
@@ -30,13 +31,13 @@ const Notes = () => {
     if (error) {
       console.error('Error deleting note:', error);
     } else {
-      // Update the state to remove the deleted note
+
       setNotes(notes.filter(note => note.id !== id));
     }
   };
 
   return (
-    <div className='mt-10'>
+    <div className='mt-10 '>
       <div className='flex flex-wrap mx-10 gap-12'>
         {notes.map((note) => (
           <div className="card bg-base-100 w-96 shadow-xl" key={note.id}>
@@ -44,9 +45,9 @@ const Notes = () => {
               <h2 className="text-center font-bold text-2xl mb-16">{note.title}</h2>
 
               <div className="card-actions justify-between">
-                <button><FaEye className='text-2xl hover:text-slate-500 text-slate-300' /></button>
+                <Link to={`/view/${note.id}`}><button><FaEye className='text-2xl hover:text-slate-500 text-slate-300' /></button></Link>
                 <div>
-                  <button><FaEdit className='text-2xl hover:text-slate-500 mr-4 text-slate-300' /></button>
+                  <Link to={`/edit/${note.id}`}><button><FaEdit className='text-2xl hover:text-slate-500 mr-4 text-slate-300' /></button></Link>
                   <button onClick={() => deleteNote(note.id)}><FaTrash className='text-xl hover:text-slate-500 text-slate-300' /></button>
                 </div>
               </div>

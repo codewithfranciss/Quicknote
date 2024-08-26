@@ -5,6 +5,7 @@ import {BrowserRouter as  Router, Routes, Route} from 'react-router-dom'
 import Create from './components/createNotes'
 import Edit from './components/editNotes'
 import Notes from './components/Notes'
+import View from './components/viewNotes'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Notes />} />
           <Route path="/create" element={<Create />} />
           <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/view/:id" element={<View />} />
           </Routes>
        
       </Router>
