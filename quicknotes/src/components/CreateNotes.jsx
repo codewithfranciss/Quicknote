@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
 import {supabase} from '../../lib/supabaseClient'
+import { useNavigate } from 'react-router-dom';
 const NotesForm = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-
+  const navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
     if(title=='' || description==''){
@@ -22,6 +23,7 @@ const NotesForm = () => {
       alert("Notes Created Successfully")
       setDescription('')
       setTitle('')
+      navigate('/')
     }else
     console.log(error)
 

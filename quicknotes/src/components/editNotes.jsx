@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
+import { useNavigate } from 'react-router-dom';
 
 const Edit = () => {
   const { id } = useParams();
   const [note, setNote] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-
+  const navigate = useNavigate()
   useEffect(() => {
     const fetchNote = async () => {
       const { data, error } = await supabase
@@ -31,7 +32,9 @@ const Edit = () => {
 
   const handleEdit = async (e) => {
     e.preventDefault(); 
-    
+    if(title=='' || description==''){
+      alert('Please fill in all fields')
+    }else{
     const { error } = await supabase
       .from('notes') 
       .update({
@@ -45,6 +48,8 @@ const Edit = () => {
     } else {
       alert("Note Edited Successfully");
     }
+    navigate('/')
+  }
   };
 
   return (
