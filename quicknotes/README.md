@@ -1,8 +1,38 @@
-# React + Vite
+# Notes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The Notes App is a modern application that allows users to manage their notes effectively. Built with React, Supabase, and Tailwind CSS, this app supports creating, viewing, editing, and deleting notes. It offers a responsive design that adapts to various devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Create Notes:** Add new notes with a title and description.
+- **View Notes:** Display notes in a card layout.
+- **Edit Notes:** Modify existing notes.
+- **Delete Notes:** Remove notes you no longer need.
+- **Responsive Design:** Mobile-friendly and desktop-ready.
+
+## Tech Stack
+
+- **Frontend:**
+  - React
+  - React Router
+  - Tailwind CSS
+
+- **Backend:**
+  - Supabase
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js** and **npm** (Node Package Manager)
+- A [Supabase](https://supabase.io/) account
+
+### Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your-username/notes-app.git
+   cd notes-app
