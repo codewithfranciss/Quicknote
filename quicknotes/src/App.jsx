@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import './App.css'
 import {BrowserRouter as  Router, Routes, Route} from 'react-router-dom'
-import Create from './components/createNotes'
+import NotesForm from './components/createNotes'
 import Edit from './components/editNotes'
 import Notes from './components/Notes'
 import View from './components/viewNotes'
@@ -17,7 +17,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Notes />} />
-          <Route path="/create" element={<Create />} />
+          <Route path="/create" element={<NotesForm />} />
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="/view/:id" element={<View />} />
           </Routes>
